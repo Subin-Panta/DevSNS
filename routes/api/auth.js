@@ -7,7 +7,7 @@ const User = require('../../models/User')
 //@acess Public
 router.get('/', auth, async (req, res) => {
   try {
-    const user = await User.findById(req.user.id).select('-password')
+    const user = await User.findById(req.user.id).select('-gpassword')
     res.json(user)
   } catch (err) {
     console.error(err.message)
