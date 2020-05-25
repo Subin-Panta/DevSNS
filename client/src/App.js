@@ -13,17 +13,17 @@ import Alert from './components/layout/Alert'
 const App = () => (
   <Provider store={store}>
     <Navbar />
-    <section className='container'>
-      <Alert />
-      <Switch>
-        <Fragment>
-          <Route exact path='/' component={Landing} />
 
+    <Switch>
+      <Fragment>
+        <Route exact path='/' component={Landing} />
+        <section className='container'>
+          <Alert />
           <Route exact path='/register' component={Register} />
-          <Route exact path='/login' component={Login} />   
-        </Fragment>
-      </Switch>
-    </section>
+          <Route exact path='/login' component={Login} />
+        </section>
+      </Fragment>
+    </Switch>
   </Provider>
 )
 
