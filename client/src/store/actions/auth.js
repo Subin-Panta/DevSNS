@@ -1,4 +1,4 @@
-import axios from 'axios'
+import axios from '../../axios-sns'
 import { setAlert } from './alert'
 import {
   REGISTER_SUCCESS,
@@ -6,9 +6,11 @@ import {
   USER_LOADED,
   AUTH_ERROR,
   LOGIN_SUCCESS,
-  LOGIN_FAIL
+  LOGIN_FAIL,
+  LOGOUT,
+  CLEAR_PROFILE
 } from './types'
-import setAuthToken from '../utils/setAuthToken'
+import setAuthToken from '../../utils/setAuthToken'
 //Load User
 export const loadUser = () => async dispatch => {
   if (localStorage.token) {
@@ -40,6 +42,7 @@ export const register = ({ name, email, password }) => async dispatch => {
       type: REGISTER_SUCCESS,
       payload: res.data
     })
+    dispatch(loadUser())
   } catch (err) {
     const errors = err.response.data.errors
     console.log(errors)
@@ -65,9 +68,10 @@ export const login = (email, password) => async dispatch => {
       type: LOGIN_SUCCESS,
       payload: res.data
     })
+    dispatch(loadUser())
   } catch (err) {
     const errors = err.response.data.errors
-    console.log(errors)
+    
     if (errors) {
       errors.forEach(error => dispatch(setAlert(error.msg, 'danger')))
     }
@@ -75,4 +79,9 @@ export const login = (email, password) => async dispatch => {
       type: LOGIN_FAIL
     })
   }
+}
+//LOGOUT /clear Profile
+export const logout = () => dispatch => {
+  dispatch({ type: CLEAR_PROFILE })
+  dispatch({ type: LOGOUT })
 }

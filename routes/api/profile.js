@@ -132,7 +132,7 @@ router.get('/user/:user_id', async (req, res) => {
 //@acess Private
 router.delete('/', auth, async (req, res) => {
   try {
-    //@todo-remove users and posts
+    //@todo-remove users posts
     //Remove Profile
     await Profile.findOneAndRemove({ user: req.user.id })
     //Remove User

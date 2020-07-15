@@ -7,10 +7,14 @@ import Register from './components/auth/Register'
 import Login from './components/auth/Login'
 //Redux
 import { Provider } from 'react-redux'
-import store from './store'
+import store from './store/store'
 import Alert from './components/layout/Alert'
 import setAuthToken from './utils/setAuthToken'
-import { loadUser } from './actions/auth'
+import { loadUser } from './store/actions/auth'
+import Dashboard from './components/dashboard/Dashboard'
+import PrivateRoute from './components/routing/PrivateRoute'
+import CreateProfile from './components/profile-form/CreateProfile'
+import EditProfile from './components/profile-form/EditProfile'
 
 if (localStorage.token) {
   setAuthToken(localStorage.token)
@@ -22,16 +26,23 @@ const App = () => {
   return (
     <Provider store={store}>
       <Navbar />
-      <Switch>
-        <Fragment>
-          <Route exact path='/' component={Landing} />
-          <section className='container'>
-            <Alert />
+      <Fragment>
+        <Route exact path='/' component={Landing} />
+        <section className='container'>
+          <Alert />
+          <Switch>
             <Route exact path='/register' component={Register} />
             <Route exact path='/login' component={Login} />
-          </section>
-        </Fragment>
-      </Switch>
+            <PrivateRoute exact path='/dashboard' component={Dashboard} />
+            <PrivateRoute
+              exact
+              path='/create-profile'
+              component={CreateProfile}
+            />
+            <PrivateRoute exact path='/edit-profile' component={EditProfile} />
+          </Switch>
+        </section>
+      </Fragment>
     </Provider>
   )
 }
