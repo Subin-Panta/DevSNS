@@ -13,6 +13,9 @@ const Navbar = props => {
         </Link>
       </li>
       <li>
+        <Link to='/profiles'>Developers</Link>
+      </li>
+      <li>
         <a onClick={props.logout} href='#!'>
           <i className='fas fa-sign-out-alt'></i>{' '}
           <span className='hide-sm'>Logout</span>

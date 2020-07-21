@@ -281,15 +281,13 @@ router.delete('/education/:edu_id', auth, async (req, res) => {
 //@acess Public
 router.get('/github/:username', async (req, res) => {
   try {
-    cid = config.get('githubClientId')
-    cs = config.get('githubSecret')
+    token = config.get('githubToken')
     const options = {
       uri: `https://api.github.com/users/${req.params.username}/repos?per_page=5&sort=created:asc`,
       method: 'GET',
       headers: {
         'user-agent': 'node.js',
-        client_id: cid,
-        client_secret: cs
+        Authorization: token
       }
     }
     request(options, (error, response, body) => {

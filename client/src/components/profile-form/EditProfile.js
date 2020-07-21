@@ -3,7 +3,7 @@ import { Link, withRouter } from 'react-router-dom'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { createProfile, getCurrentProfile } from '../../store/actions/profile'
-import { buildSanitizeFunction } from 'express-validator'
+
 const EditProfile = props => {
   const [formData, setFormData] = useState({
     company: '',
