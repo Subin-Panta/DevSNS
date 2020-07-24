@@ -6,6 +6,7 @@ import { Spinner } from '../../layout/Spinner/Spinner'
 import { getPost } from '../../../store/actions/post'
 import PostItem from '../PostItem'
 import CommentForm from './CommentForm'
+import Comments from './Comments'
 const Post = props => {
   useEffect(() => {
     props.getPost(props.match.params.id)
@@ -19,6 +20,9 @@ const Post = props => {
       </Link>
       <PostItem post={props.post.post} showActions={false} />
       <CommentForm postId={props.post.post._id} />
+      {props.post.post.comments.map(item => (
+        <Comments key={item._id} comment={item} postId={props.post.post._id} />
+      ))}
     </Fragment>
   )
 }

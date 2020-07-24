@@ -20,8 +20,8 @@ const ProfileTop = ({ profile }) => {
         {profile.social && profile.social.twitter && (
           <a
             href={profile.social.twitter}
+            rel='noopener noreferrer'
             target='_blank'
-            rel='nooopner noreferrer '
           >
             <i className='fab fa-twitter fa-2x'></i>
           </a>
@@ -29,8 +29,8 @@ const ProfileTop = ({ profile }) => {
         {profile.social && profile.social.facebook && (
           <a
             href={profile.social.facebook}
+            rel='noopener noreferrer'
             target='_blank'
-            rel='nooopner noreferrer '
           >
             <i className='fab fa-facebook fa-2x'></i>
           </a>
@@ -38,8 +38,8 @@ const ProfileTop = ({ profile }) => {
         {profile.social && profile.social.linkedin && (
           <a
             href={profile.social.linkedin}
+            rel='noopener noreferrer'
             target='_blank'
-            rel='nooopner noreferrer '
           >
             <i className='fab fa-linkedin fa-2x'></i>
           </a>
@@ -47,8 +47,8 @@ const ProfileTop = ({ profile }) => {
         {profile.social && profile.social.instagram && (
           <a
             href={profile.social.instagram}
+            rel='noopener noreferrer'
             target='_blank'
-            rel='nooopner noreferrer '
           >
             <i className='fab fa-instagram fa-2x'></i>
           </a>
@@ -56,8 +56,8 @@ const ProfileTop = ({ profile }) => {
         {profile.social && profile.social.youtube && (
           <a
             href={profile.social.youtube}
+            rel='noopener noreferrer'
             target='_blank'
-            rel='nooopner noreferrer '
           >
             <i className='fab fa-youtube fa-2x'></i>
           </a>
