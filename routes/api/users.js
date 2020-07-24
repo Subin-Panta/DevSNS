@@ -30,9 +30,7 @@ router.post(
       //See if user exists
       let user = await User.findOne({ email })
       if (user) {
-        return res
-          .status(400)
-          .json({ l: [{ msg: 'User Already Exists' }] })
+        return res.status(400).json({ l: [{ msg: 'User Already Exists' }] })
       }
       //Get users gravatar
       const avatar = gravatar.url(email, {
@@ -59,7 +57,7 @@ router.post(
       jwt.sign(
         payload,
         config.get('jwtSecret'),
-        { expiresIn: 36000000000000 },
+        { expiresIn: 3600 },
         (err, token) => {
           if (err) throw err
           res.json({ token })
