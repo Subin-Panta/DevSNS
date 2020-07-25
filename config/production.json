@@ -1,0 +1,6 @@
+{
+  "mongoURI": "mongodb+srv://SubinPanta:99Kamehameha!99@cluster0-g4q5i.mongodb.net/test?retryWrites=true&w=majority",
+  "jwtSecret": "XASSS",
+  "githubToken": " 22a3d684b7a2b85fdf767fca0f09584fb40d42e9 "
+}
+
