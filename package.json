@@ -11,6 +11,9 @@
     "dev": "concurrently \"npm run server\" \"npm run client\"",
     "heroku-postbuild": "cd client npm install && npm run build"
   },
+  "engines": {
+    "node": "11.6.0"
+  },
   "keywords": [],
   "author": "Subin Panta",
   "license": "MIT",
