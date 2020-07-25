@@ -25,8 +25,11 @@
     "jsonwebtoken": "^8.5.1",
     "loadash": "^1.0.0",
     "mongoose": "^5.9.25",
+    "react": "^16.13.1",
+    "react-scripts": "^3.4.1",
     "request": "^2.88.2",
-    "save": "^2.4.0"
+    "save": "^2.4.0",
+    "scripts": "^0.1.0"
   },
   "devDependencies": {
     "concurrently": "^5.2.0",
