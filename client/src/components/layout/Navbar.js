@@ -55,6 +55,7 @@ const Navbar = props => {
     </nav>
   )
 }
+
 Navbar.propTypes = {
   logout: PropTypes.func.isRequired,
   auth: PropTypes.object.isRequired

@@ -7,8 +7,9 @@ const app = express()
 //connect Database
 connectDB()
 
-//express Bodyparser Middleware
+// for cross origin reference
 app.use(cors())
+//express Bodyparser Middleware
 app.use(express.json({ extended: false }))
 
 //define routes

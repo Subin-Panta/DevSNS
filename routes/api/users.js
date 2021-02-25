@@ -7,7 +7,7 @@ const config = require('config')
 const { check, validationResult } = require('express-validator')
 //importing schema
 const User = require('../../models/User')
-//@route GET api/users
+//@route POST api/users
 //@desc Register user
 //@acess Public
 router.post(
@@ -30,7 +30,9 @@ router.post(
       //See if user exists
       let user = await User.findOne({ email })
       if (user) {
-        return res.status(400).json({ l: [{ msg: 'User Already Exists' }] })
+        return res
+          .status(400)
+          .json({ errors: [{ msg: 'User Already Exists' }] })
       }
       //Get users gravatar
       const avatar = gravatar.url(email, {

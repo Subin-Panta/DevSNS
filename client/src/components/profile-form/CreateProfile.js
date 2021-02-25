@@ -16,7 +16,8 @@ const CreateProfile = props => {
     facebook: '',
     linkedin: '',
     youtube: '',
-    instagram: ''
+    instagram: '',
+    
   })
   const [displaySocialInputs, setDisplaySocialInputs] = useState(false)
   const {

@@ -15,7 +15,7 @@ const Landing = props => {
             Create developer profile/porofolio,share posts and get help from
             other developers
           </p>
-          <div className='buttons'>
+          <div>
             <Link to='/register' className='btn btn-primary'>
               Sign Up
             </Link>
